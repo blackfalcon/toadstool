@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'compass'
+require 'slim'
 
 # If you're using bundler, you will need to add this
 require 'bundler/setup'
@@ -18,12 +19,13 @@ get '/stylesheets/:name.css' do
   scss(:"../sass/#{params[:name]}", Compass.sass_engine_options )
 end
 
-
+Slim::Engine.set_default_options :pretty => true
+Slim::Engine.set_default_options :sections => true
 
 get '/' do
-  erb :index
+  slim :index
 end
 
 get '/widgets' do
-  erb :"widgets/index"
+  slim :"widgets/index"
 end

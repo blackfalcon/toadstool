@@ -8,10 +8,12 @@
 
 // grid arguments ($col_count, $grid_child, $grid_padding_lr, $grid_padding_tb, $grid_border, $grid_uom, $col_gutter, $grid_type, $grid_align)
 
-
+body {
+	background: orange;
+}
 
 .main_content {
-	@include main_content(12, $main_grid_align: left, $main_grid_uom: em);
+	@include main_content(12, $main_grid_align: center, $main_grid_uom: em);
 	background: blue;
 	color: $white;
 	text-align: center;
